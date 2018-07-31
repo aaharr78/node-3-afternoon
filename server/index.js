@@ -18,7 +18,9 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(checkForSession);
+
 app.use(express.static(`${__dirname}/build`));
+// app.use(express.static(`${__dirname}/../build`));
 
 app.get('/api/swag', swag_controller.read);
 
